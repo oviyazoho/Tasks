@@ -1,0 +1,10 @@
+<Layout::Header/>
+<Layout::SideBar/>
+{{#if @type=="dashboard"}}
+  <Dashboard/>
+{{else if @type=="employee"}}\
+  <Employee/>
+{{else if @type=="Report"}}\
+  <Report/>
+
+{{/if}}

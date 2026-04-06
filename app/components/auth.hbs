@@ -1,0 +1,5 @@
+{{#if this.login}}
+  <Auth::Login @toggleLogin={{this.toggle}}/>
+{{else}}
+  <Auth::Signup @toggleLogin={{this.toggle}}/>
+{{/if}}
