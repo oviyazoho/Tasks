@@ -1,8 +1,10 @@
-<form>
-  <label for="username">Username:</label>
-  <input id="username" type="text" placeholder="Username" required/>
-  <label for="password">Password:</label>
-  <input id="password" type="password" placeholder="Password" required/>
-  <button type="submit">Sign Up</button>
-  <p>Already have an account? <span {{on "click" @toggleLogin}}>Login</span></p>
-</form>
+<div class="auth">
+  <form {{on "submit" this.signup}}>
+    <label class="authTxt" for="username">Username:</label>
+    <input id="username" type="text" placeholder="Username" required value={{this.username}} {{on "input" this.updateUsername}} />
+    <label class="authTxt" for="password">Password:</label>
+    <input id="password" type="password" placeholder="Password" required value={{this.password}} {{on "input" this.updatePassword}} />
+    <button class="authBtn" type="submit" disabled={{if this.canSignup false true}}>Sign Up</button>
+    <p class="authTxt">Already have an account? <span role="button" {{on "click" @toggleLogin}}>Login</span></p>
+  </form>
+</div>
